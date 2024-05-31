@@ -13,6 +13,7 @@ import Swal from "sweetalert2";
 const Form = () => {
   const [page, setPage] = useState(0);
   const [data, setData] = useState({
+    email: "",
     url: "",
     issue: "",
     details: "",
@@ -29,6 +30,7 @@ const Form = () => {
     try {
       setData({ ...data, sendReport: true });
       await axios.post("http://localhost:3001/bugfixing", {
+        email: localStorage.getItem("email"),
         url,
         issue,
         details,

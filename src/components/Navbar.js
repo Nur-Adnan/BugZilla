@@ -35,11 +35,19 @@ function Navbar() {
                     </li>
                   </Link>
                   {userRole === "NormalUser" && (
+                    <>
                     <Link to="/form">
                       <li className="text-white hover:text-gray-200 font-medium transition duration-300">
                         Form
                       </li>
                     </Link>
+                    <Link to="/userBugTable">
+                      <li className="text-white hover:text-gray-200 font-medium transition duration-300">
+                        History
+                      </li>
+                    </Link>
+                    </>
+                    
                   )}
                   {userRole === "Admin" && (
                     <>

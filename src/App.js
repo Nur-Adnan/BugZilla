@@ -8,6 +8,7 @@ import Account from "./pages/Account";
 import Form from "./pages/form";
 import Reports from "./pages/Reports";
 import SolveList from "./pages/SolveList";
+import UserBugTable from "./pages/UserBugTable";
 
 function App() {
   const isUserSignedIn = !!localStorage.getItem("token");
@@ -23,6 +24,7 @@ function App() {
         {isUserSignedIn && <Route path="/form" element={<Form />} />}
         {isUserSignedIn && <Route path="/bugReport" element={<Reports />} />}
         {isUserSignedIn && <Route path="/solveList" element={<SolveList />} />}
+        {isUserSignedIn && <Route path="/userBugTable" element={<UserBugTable />} />}
       </Routes>
     </div>
   );

@@ -43,7 +43,7 @@ function Login() {
         email,
         password,
       });
-      const { token, message, role } = response.data;
+      const { token, message, role} = response.data;
 
       Swal.fire({
         title: "Success",
@@ -60,6 +60,8 @@ function Login() {
       navigate("/account");
       localStorage.setItem("token", token);
       localStorage.setItem("role", role);
+      localStorage.setItem("email", email);
+      
     } catch (error) {
       console.error("Login Error:", error);
       const errorMessage = error.response?.data?.error || "Login failed";
